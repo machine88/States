@@ -11,7 +11,6 @@ import org.apache.http.client.ClientProtocolException;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -85,6 +84,7 @@ public class StatesClientImpl implements IStatesClient{
 		return alabGeorgia;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> ResponseEntity<T>  getState(String abbr) throws ClientProtocolException, HttpException, IOException {
 		// Set the Accept header

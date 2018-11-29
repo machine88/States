@@ -43,4 +43,14 @@ public class StatesServiceTest {
 
 	}
 	
+	// Case if user sends the wrong abbreviation then return all the states
+	@Test
+	public void getStateTestAll() throws ClientProtocolException, HttpException, IOException {
+		String abbr = "/Ti";
+
+		ResponseEntity<AllStatesResponse> states = clientImpl.getState(abbr);
+		assertTrue(states.getBody().getResponse().getResult().size() == 55);
+
+	}
+	
 }

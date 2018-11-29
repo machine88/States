@@ -43,7 +43,8 @@ public class StatesRestService {
 			return client.getAllStates();
 		}
 	 
-	 @RequestMapping(value = "/{abbr}", method = RequestMethod.GET)
+	 @SuppressWarnings("unchecked")
+	@RequestMapping(value = "/{abbr}", method = RequestMethod.GET)
 		public <T> ResponseEntity<T> getState(@PathVariable(value = "abbr") String abbr) throws ClientProtocolException, HttpException, IOException{
 		 
 		 ResponseEntity<SingleStateResponse> resp =  client.getState(abbr);
